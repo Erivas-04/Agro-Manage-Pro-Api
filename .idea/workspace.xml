@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/settings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/settings/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/settings/local.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/settings/production.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PythonTest/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/api/serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/company/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/api/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0002_historicaluser_change_password_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0003_alter_historicaluser_change_password_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2noRniSZABZT31k0CRs5hGtElFN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.manage.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Documentos/DESSARROLLO DE SOFTWARE/System GS",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="pythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.10 (pythonProject)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="" />
+      <created>1729637610859</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729637610859</updated>
+    </task>
+    <servers />
+  </component>
+</project>
