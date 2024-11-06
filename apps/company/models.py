@@ -4,7 +4,8 @@ from apps.users.models import User
 
 class Company(models.Model):
     company_name = models.CharField('Nombre de empresa',
-                                    max_length=15)
+                                    max_length=30,
+                                    validators=[MinLengthValidator(3)])
     hability = models.BooleanField('Habilitado',
                                    default=True)
     usernameextension = models.CharField('Extension de empresa',
@@ -36,8 +37,8 @@ class Company(models.Model):
         verbose_name = 'Empresa'
         verbose_name_plural = 'Empresas'
 
-    # def __str__(self):
-    #     return f'{self.company_name}'
+    def __str__(self):
+        return f'{self.company_name}'
 
 class UserAsigned(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)

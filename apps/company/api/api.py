@@ -13,14 +13,14 @@ class CompanyApiView(APIView):
                 return Response(data={'message': 'Empresa no encontrada'}, status = status.HTTP_404_NOT_FOUND)
 
             company_serializer = CompanySerializer(company)
-            return Response(data={'company': company_serializer.data}, status=status.HTTP_200_OK)
+            return Response(data=company_serializer.data, status=status.HTTP_200_OK)
 
         return Response(data={'message': 'No es posible buscar una empresa sin id'}, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, pk = None):
         company_select = Company.objects.filter(id = pk).first()
 
-        if company_select != None:
+        if company_select:
             company_act = CompanySerializer(company_select, data = request.data)
 
             if company_act.is_valid():
@@ -54,15 +54,13 @@ class UserAsignedAPI(APIView):
 
             if user_select:
                 user_select_serializer = UserAsignedSerializer(user_select, many=True)
-                return Response(data={'User': user_select_serializer.data},
+                return Response(data=user_select_serializer.data,
                                 status=status.HTTP_200_OK)
 
             return Response(data={'message': 'Usuario no encontrado'},
                             status=status.HTTP_404_NOT_FOUND)
 
-        all_users = UserAsigned.objects.all()
-        all_users_serializer = UserAsignedSerializer(all_users, many=True)
-        return Response(data={'users': all_users_serializer.data}, status=status.HTTP_200_OK)
+        return Response(data={'message': 'Es obligatorio un id'})
 
 
     def post(self, request):

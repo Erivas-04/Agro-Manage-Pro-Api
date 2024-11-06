@@ -14,6 +14,7 @@ class UserAsignedSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         return {
+            'id': instance.user.id,
             'username': instance.user.username,
             'name': instance.user.name,
             'last_name': instance.user.last_name,
