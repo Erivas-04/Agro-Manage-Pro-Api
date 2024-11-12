@@ -3,14 +3,26 @@ from rest_framework.response import Response
 
 from apps.cages.models import Cage
 from apps.cages.api.serializers import CageListSerializer, CageCreateSerializer, AsigAnimal, AsigAnimalFood
+from apps.company.models import UserAsigned
 
 
 class CageListAPIView(generics.ListAPIView):
     serializer_class = CageListSerializer
 
     def get_queryset(self):
-        company_id = self.kwargs.get('company_id')
-        return Cage.objects.filter(user__company__id = company_id)
+        user_id = self.kwargs.get('user_id')
+        user = UserAsigned.objects.filter(id = user_id).first()
+        if user:
+            return Cage.objects.filter(user__company__id=user.company.id)
+
+        return []
+
+class CageGetAPIView(generics.RetrieveAPIView):
+    serializer_class = CageListSerializer
+
+    def get_queryset(self):
+        return self.get_serializer().Meta.model.objects.filter(hability = True)
+
 
 
 class CageCreateAPIView(generics.CreateAPIView):

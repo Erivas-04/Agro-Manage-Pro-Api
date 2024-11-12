@@ -13,25 +13,41 @@ class CageListSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def to_representation(self, instance):
-        representation = {
-            'id': instance.id,
-            'user': instance.user.user.name,
-            'code': instance.code,
-            'name': instance.name,
-            'hability': instance.hability,
-            'observations': instance.observations,
-            'feed_animal': instance.feed_animal.animal_amount,
-            'feed_animal_food': instance.feed_animal_food.animal_food_amount,
-        }
         try:
-            representation['animal'] = instance.animal.animal_name
+            animal_asigned = {
+                'animalId': instance.animal.id,
+                'animalName': instance.animal.animal_name,
+                'animalAmount': instance.feed_animal.animal_amount
+            }
         except:
-            representation['animal'] = "No hay animal asignado"
+            animal_asigned = {
+                'animalId': 0,
+                'animalName': "Animal no asignado",
+                'animalAmount': instance.feed_animal.animal_amount
+            }
 
         try:
-            representation['animal_food'] = instance.animal_food.animal_food_name
+            animal_food_asigned = {
+                'concentrateId': instance.animal_food.id,
+                'concentrateName': instance.animal_food.animal_food_name,
+                'concentrateAmount': instance.feed_animal_food.animal_food_amount
+            }
         except:
-            representation['animal_food'] = "No hay concentrado asignado"
+            animal_food_asigned = {
+                'concentrateId': 0,
+                'concentrateName': "Concentrado no asignado",
+                'concentrateAmount': instance.feed_animal_food.animal_food_amount
+            }
+
+        representation = {
+            'id': instance.id,
+            'code': instance.code,
+            'name': instance.name,
+            'active': instance.hability,
+            'observations': instance.observations,
+            'animalAsigned': animal_asigned,
+            'concentrateAsigned': animal_food_asigned,
+        }
 
         return representation
 

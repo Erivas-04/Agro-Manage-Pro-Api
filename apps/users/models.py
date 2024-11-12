@@ -1,4 +1,5 @@
 from operator import truediv
+from random import choices
 
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
@@ -30,7 +31,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length = 255, unique = True)
     email = models.EmailField('Correo Electrónico',max_length = 255, unique = True, null = True, blank=True)
-    name = models.CharField('Nombres', max_length = 255)
+    firstname = models.CharField('Nombres', max_length = 255)
     last_name = models.CharField('Apellidos', max_length = 255)
     image = models.ImageField('Imagen de perfil', upload_to='perfil/', max_length=255, null=True, blank = True)
     is_active = models.BooleanField('Habilitado',default = True)
@@ -40,9 +41,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     tel = models.CharField('Telfono', max_length=10, null=True, blank=True)
     observations = models.CharField('Observaciones', max_length=100, null=True, blank=True)
-    change_password = models.BooleanField('Cambiar contraseña',default=False)
-    change_password_next_session = models.BooleanField('Cambiar contraseña en el siguiente inicio de sesion',
+    changePassword = models.BooleanField('Cambiar contraseña',default=False)
+    changePasswordNextSession = models.BooleanField('Cambiar contraseña en el siguiente inicio de sesion',
                                                        default=False)
+    ROLES = (
+        ('U', 'USER'),
+        ('A', 'ADMIN')
+    )
+    rol = models.CharField(max_length=20,choices = ROLES, default='U')
 
     class Meta:
         verbose_name = 'Usuario'
@@ -52,4 +58,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['name','last_name']
 
     def __str__(self):
-        return f'{self.name} {self.last_name}'
+        return f'{self.firstname} {self.last_name}'

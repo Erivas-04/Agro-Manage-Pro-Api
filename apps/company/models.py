@@ -54,4 +54,4 @@ class UserAsigned(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'{self.user.name} de {self.company.company_name}'
+        return f'{self.user.firstname} de {self.company.company_name}'

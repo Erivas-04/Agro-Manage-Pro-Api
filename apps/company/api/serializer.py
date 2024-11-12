@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from apps.company.models import Company, UserAsigned
+from apps.users.models import User
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,12 +17,13 @@ class UserAsignedSerializer(serializers.ModelSerializer):
         return {
             'id': instance.user.id,
             'username': instance.user.username,
-            'name': instance.user.name,
+            'firstname': instance.user.firstname,
             'last_name': instance.user.last_name,
-            'is_active': instance.user.is_active,
             'tel': instance.user.tel,
+            'rol': instance.user.rol,
             'observations': instance.user.observations,
-            'change_password': instance.user.change_password,
-            'change_password_next_session': instance.user.change_password_next_session,
+            'is_active': instance.user.is_active,
+            'change_password': instance.user.changePassword,
+            'change_password_next_session': instance.user.changePasswordNextSession,
 
         }

@@ -1,16 +1,18 @@
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics
 from rest_framework.views import APIView
 from .serializer import CompanySerializer, UserAsignedSerializer
 from apps.company.models import Company, UserAsigned
-from apps.users.models import User
+from apps.users.api.serializers import UserModifySerializer
 
 class CompanyApiView(APIView):
     def get(self, request, pk = None):
         if pk != None:
-            company = Company.objects.filter(id = pk).first()
-            if company == None:
+            user = UserAsigned.objects.filter(id = pk).first()
+            if user == None:
                 return Response(data={'message': 'Empresa no encontrada'}, status = status.HTTP_404_NOT_FOUND)
+
+            company = Company.objects.filter(id = user.company.id).first()
 
             company_serializer = CompanySerializer(company)
             return Response(data=company_serializer.data, status=status.HTTP_200_OK)
@@ -50,10 +52,11 @@ class CompanyCreateView(APIView):
 class UserAsignedAPI(APIView):
     def get(self, request, pk = None):
         if pk != None:
-            user_select = UserAsigned.objects.filter(company = pk)
+            user = UserAsigned.objects.filter(id = pk).first()
 
-            if user_select:
-                user_select_serializer = UserAsignedSerializer(user_select, many=True)
+            if user:
+                users_list = UserAsigned.objects.filter(company = user.company.id)
+                user_select_serializer = UserAsignedSerializer(users_list, many=True)
                 return Response(data=user_select_serializer.data,
                                 status=status.HTTP_200_OK)
 
@@ -62,29 +65,27 @@ class UserAsignedAPI(APIView):
 
         return Response(data={'message': 'Es obligatorio un id'})
 
+class UserAsignedCreateAPIView(generics.CreateAPIView):
+    serializer_class = UserAsignedSerializer
 
-    def post(self, request):
-        user = User.objects.create_user(request.data['user']['username'],
-                                 None,
-                                 request.data['user']['name'],
-                                 request.data['user']['last_name'],
-                                 None,
-                                 tel = request.data['user']['tel'],
-                                 observations = request.data['user']['observations'],
-                                 change_password = request.data['user']['change_password'],
-                                 change_password_next_session = request.data['user']['change_password_next_session'],
-                                 is_active = request.data['user']['is_active'])
+    def post(self, request,user_id = None, *args, **kwargs):
+        user_serializer = UserModifySerializer(data = request.data)
+        if not user_serializer.is_valid():
+            return Response(data={'message': 'usuario no valido', 'error': user_serializer.errors}, status = status.HTTP_400_BAD_REQUEST)
 
+        creator_user = UserAsigned.objects.filter(id = user_id).first()
+        company = Company.objects.filter(id = creator_user.company.id).first()
 
-        request.data['user'] = user.id
+        user_saved = user_serializer.save()
+        asigned = {
+            'user': user_saved.id,
+            'company': company.id
+        }
 
-        user_request = UserAsignedSerializer(data = request.data, context=request.data)
+        asigned_serializer = UserAsignedSerializer(data = asigned)
+        if not asigned_serializer.is_valid():
+            return Response(data = {'message': 'Algo fue invalido en la empresa'}, status = status.HTTP_400_BAD_REQUEST)
 
-        if user_request.is_valid():
-            user_request.save()
-            return Response(data={'message': 'Usuario creado correctamente'},
-                            status = status.HTTP_201_CREATED)
+        asigned_serializer.save()
 
-        return Response(data={'message': 'Usuario no valido',
-                              'error': user_request.errors},
-                        status=status.HTTP_400_BAD_REQUEST)
+        return Response(data={'message': 'usuario creado correctamente'}, status = status.HTTP_201_CREATED)
