@@ -2,11 +2,12 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 
 from apps.cages.models import Cage
-from apps.cages.api.serializers import CageListSerializer, CageCreateSerializer, AsigAnimal, AsigAnimalFood
+from apps.cages.api.serializers import CageListSerializer, CageCreateSerializer, AsigAnimal, AsigAnimalFood, CageUpdateSerializer
 from apps.company.models import UserAsigned
 
+from apps.login_logout.authentication_mixins import Authentication
 
-class CageListAPIView(generics.ListAPIView):
+class CageListAPIView(Authentication, generics.ListAPIView):
     serializer_class = CageListSerializer
 
     def get_queryset(self):
@@ -17,7 +18,7 @@ class CageListAPIView(generics.ListAPIView):
 
         return []
 
-class CageGetAPIView(generics.RetrieveAPIView):
+class CageGetAPIView(Authentication, generics.RetrieveAPIView):
     serializer_class = CageListSerializer
 
     def get_queryset(self):
@@ -25,17 +26,36 @@ class CageGetAPIView(generics.RetrieveAPIView):
 
 
 
-class CageCreateAPIView(generics.CreateAPIView):
+class CageCreateAPIView(Authentication, generics.CreateAPIView):
     serializer_class = CageCreateSerializer
 
     def post(self, request, *args, **kwargs):
         post_cage = request.data
         post_cage_serializer=CageCreateSerializer(data=post_cage, context=post_cage)
         if post_cage_serializer.is_valid():
-            post_cage_serializer.save()
-            return Response(data={'message': 'Corral creado correctamente'}, status = status.HTTP_201_CREATED)
+            cage_created = post_cage_serializer.save()
+            return Response(data={'message': 'Corral creado correctamente',
+                                  'id': cage_created.id}, status = status.HTTP_201_CREATED)
 
-class AsigAnimalUpdateAPIView(generics.UpdateAPIView):
+class CageUpdateAPIView(Authentication, generics.UpdateAPIView):
+    serializer_class = CageUpdateSerializer
+
+    def put(self, request, *args, **kwargs):
+        cage_id = self.kwargs.get('cage_id')
+        cage_select = Cage.objects.filter(id = cage_id).first()
+
+        if not cage_select:
+            return Response(data={'message': 'Corral no encontrado'}, status=status.HTTP_404_NOT_FOUND)
+
+        cage_serializer = CageUpdateSerializer(cage_select, data = request.data)
+        if not cage_serializer.is_valid():
+            return Response(data={'message': 'Corral invalido'}, status = status.HTTP_400_BAD_REQUEST)
+
+        print(cage_serializer)
+        cage_serializer.save()
+        return Response(data = {'message': 'Corral actualizado'}, status = status.HTTP_200_OK)
+
+class AsigAnimalUpdateAPIView(Authentication, generics.UpdateAPIView):
     serializer_class = AsigAnimal
 
     def put(self, request, pk = None ,*args, **kwargs):
@@ -51,7 +71,7 @@ class AsigAnimalUpdateAPIView(generics.UpdateAPIView):
 
         return Response(data={'message': 'Corral no encontrado'}, status = status.HTTP_404_NOT_FOUND)
 
-class AsigAnimalFoodUpdateAPIView(generics.UpdateAPIView):
+class AsigAnimalFoodUpdateAPIView(Authentication, generics.UpdateAPIView):
     serializer_class = AsigAnimalFood
 
     def put(self, request, pk = None, *args, **kwargs):

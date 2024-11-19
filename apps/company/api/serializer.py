@@ -18,12 +18,12 @@ class UserAsignedSerializer(serializers.ModelSerializer):
             'id': instance.user.id,
             'username': instance.user.username,
             'firstname': instance.user.firstname,
-            'last_name': instance.user.last_name,
+            'lastname': instance.user.last_name,
             'tel': instance.user.tel,
-            'rol': instance.user.rol,
+            'role': 'USER' if instance.user.role == 0 else 'ADMIN',
             'observations': instance.user.observations,
             'is_active': instance.user.is_active,
-            'change_password': instance.user.changePassword,
-            'change_password_next_session': instance.user.changePasswordNextSession,
+            'changePassword': instance.user.changePassword,
+            'changePasswordNextSession': instance.user.changePasswordNextSession,
 
         }

@@ -3,9 +3,10 @@ from rest_framework import status, generics
 from rest_framework.views import APIView
 from .serializer import CompanySerializer, UserAsignedSerializer
 from apps.company.models import Company, UserAsigned
-from apps.users.api.serializers import UserModifySerializer
+from apps.users.api.serializers import CreateUser
+from apps.login_logout.authentication_mixins import Authentication
 
-class CompanyApiView(APIView):
+class CompanyApiView(Authentication, APIView):
     def get(self, request, pk = None):
         if pk != None:
             user = UserAsigned.objects.filter(id = pk).first()
@@ -36,7 +37,7 @@ class CompanyApiView(APIView):
         return Response(data={'message': 'Empresa no encontrada'},
                         status= status.HTTP_404_NOT_FOUND)
 
-class CompanyCreateView(APIView):
+class CompanyCreateView(Authentication, APIView):
     def post(self, request):
         company_request = CompanySerializer(data = request.data, context=request.data)
         if company_request.is_valid():
@@ -49,7 +50,7 @@ class CompanyCreateView(APIView):
                               },
                         status = status.HTTP_400_BAD_REQUEST)
 
-class UserAsignedAPI(APIView):
+class UserAsignedAPI(Authentication, APIView):
     def get(self, request, pk = None):
         if pk != None:
             user = UserAsigned.objects.filter(id = pk).first()
@@ -65,11 +66,11 @@ class UserAsignedAPI(APIView):
 
         return Response(data={'message': 'Es obligatorio un id'})
 
-class UserAsignedCreateAPIView(generics.CreateAPIView):
+class UserAsignedCreateAPIView(Authentication, generics.CreateAPIView):
     serializer_class = UserAsignedSerializer
 
     def post(self, request,user_id = None, *args, **kwargs):
-        user_serializer = UserModifySerializer(data = request.data)
+        user_serializer = CreateUser(data = request.data)
         if not user_serializer.is_valid():
             return Response(data={'message': 'usuario no valido', 'error': user_serializer.errors}, status = status.HTTP_400_BAD_REQUEST)
 

@@ -3,8 +3,9 @@ from apps.animals.models import Animal
 from apps.company.models import UserAsigned
 from rest_framework import generics, status
 from rest_framework.response import Response
+from apps.login_logout.authentication_mixins import Authentication
 
-class AnimalListAPIView(generics.ListAPIView):
+class AnimalListAPIView(Authentication,generics.ListAPIView):
     serializer_class = AnimalViewSerializer
 
     def get_queryset(self):
@@ -15,7 +16,7 @@ class AnimalListAPIView(generics.ListAPIView):
 
         return []
 
-class AnimalCreateAPIView(generics.CreateAPIView):
+class AnimalCreateAPIView(Authentication, generics.CreateAPIView):
     serializer_class = AnimalCreateUpdateSerializer
 
     def post(self, request, user_id = None, *args, **kwargs):
@@ -35,7 +36,7 @@ class AnimalCreateAPIView(generics.CreateAPIView):
 
         return Response(data={'message': 'Animal creado correctamente'}, status = status.HTTP_201_CREATED)
 
-class AnimalUpdateAPIView(generics.UpdateAPIView):
+class AnimalUpdateAPIView(Authentication, generics.UpdateAPIView):
     serializer_class = AnimalCreateUpdateSerializer
 
     def put(self, request, animal_id = None,*args, **kwargs):

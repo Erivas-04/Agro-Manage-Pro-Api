@@ -32,17 +32,23 @@ LOCAL_APPS = [
     'apps.users',
     'apps.company',
     'apps.cages',
-    'apps.animals'
+    'apps.animals',
+    'apps.login_logout'
 ]
 
 THIRD_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
     'simple_history'
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
 
+TOKEN_EXPIRED_AFTER_SECONDS = 1 * 60 * 60 * 24
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,6 +98,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:4200"
 ]
 
 

@@ -3,8 +3,9 @@ from apps.animals.models import AnimalFood
 from apps.company.models import UserAsigned
 from rest_framework import generics, status
 from rest_framework.response import Response
+from apps.login_logout.authentication_mixins import Authentication
 
-class AnimalFoodListAPIView(generics.ListAPIView):
+class AnimalFoodListAPIView(Authentication, generics.ListAPIView):
     serializer_class = AnimalFoodViewSerializer
 
     def get_queryset(self):
@@ -15,7 +16,7 @@ class AnimalFoodListAPIView(generics.ListAPIView):
 
         return []
 
-class AnimalFoodCreateAPIView(generics.CreateAPIView):
+class AnimalFoodCreateAPIView(Authentication, generics.CreateAPIView):
     serializer_class = AnimalFoodCreateUpdateSerializer
 
     def post(self, request, user_id = None,*args, **kwargs):
@@ -35,7 +36,7 @@ class AnimalFoodCreateAPIView(generics.CreateAPIView):
         return Response(data={'message': 'Concentrado creado correctamente'}, status = status.HTTP_200_OK)
 
 
-class AnimalFoodUpdateAPIView(generics.UpdateAPIView):
+class AnimalFoodUpdateAPIView(Authentication, generics.UpdateAPIView):
     serializer_class = AnimalFoodCreateUpdateSerializer
 
     def put(self, request, animal_food_id = None, *args, **kwargs):

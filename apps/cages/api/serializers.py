@@ -57,9 +57,10 @@ class CageCreateSerializer(serializers.Serializer):
                                  min_length=1)
     name = serializers.CharField(max_length=30,
                                  min_length=8)
-    hability = serializers.BooleanField()
+    hability = serializers.BooleanField(default=False)
     observations = serializers.CharField(max_length=100,
-                                         allow_blank=True)
+                                         allow_blank=True,
+                                         allow_null=True)
 
     def create(self, validated_data):
         user_data = validated_data.pop('user')
@@ -70,6 +71,24 @@ class CageCreateSerializer(serializers.Serializer):
 
         cage = Cage.objects.create(feed_animal = feed_animal, feed_animal_food = feed_animal_food, user = user, **validated_data)
         return cage
+
+class CageUpdateSerializer(serializers.Serializer):
+    code = serializers.CharField(max_length=8,
+                                 min_length=1)
+    name = serializers.CharField(max_length=30,
+                                 min_length=8)
+    active = serializers.BooleanField()
+    observations = serializers.CharField(max_length=100,
+                                         allow_blank=True,
+                                         allow_null=True)
+
+    def update(self, instance, validated_data):
+        instance.code = validated_data.get('code', instance.code)
+        instance.name = validated_data.get('name', instance.name)
+        instance.hability = validated_data.get('active', instance.hability)
+        instance.observations = validated_data.get('observations', instance.observations)
+        instance.save()
+        return instance
 
 class AsigAnimal(serializers.Serializer):
     animal = serializers.IntegerField()

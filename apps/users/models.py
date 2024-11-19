@@ -45,10 +45,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     changePasswordNextSession = models.BooleanField('Cambiar contraseña en el siguiente inicio de sesion',
                                                        default=False)
     ROLES = (
-        ('U', 'USER'),
-        ('A', 'ADMIN')
+        (0, 'USER'),
+        (1, 'ADMIN')
     )
-    rol = models.CharField(max_length=20,choices = ROLES, default='U')
+    role = models.PositiveSmallIntegerField(choices = ROLES)
 
     class Meta:
         verbose_name = 'Usuario'
