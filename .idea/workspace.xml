@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="login y actualizacion de busquedas por id de asignacion">
+    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="correccion de creacion de usuarios al colocar un password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PythonTest/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/local.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PythonTest/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/production.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/company/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/api/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/api/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/api/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732031410400</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="correccion de creacion de usuarios al colocar un password">
+      <option name="closed" value="true" />
+      <created>1732053304835</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732053304835</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +155,7 @@
     <MESSAGE value="Funcionamiento de corral y asignacion de animales y concentados" />
     <MESSAGE value="Funcionamiento de creacion total casi terminado" />
     <MESSAGE value="login y actualizacion de busquedas por id de asignacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="login y actualizacion de busquedas por id de asignacion" />
+    <MESSAGE value="correccion de creacion de usuarios al colocar un password" />
+    <option name="LAST_COMMIT_MESSAGE" value="correccion de creacion de usuarios al colocar un password" />
   </component>
 </project>

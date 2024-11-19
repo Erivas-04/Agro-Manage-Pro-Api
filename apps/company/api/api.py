@@ -66,7 +66,7 @@ class UserAsignedAPI(Authentication, APIView):
 
         return Response(data={'message': 'Es obligatorio un id'})
 
-class UserAsignedCreateAPIView(generics.CreateAPIView):
+class UserAsignedCreateAPIView(Authentication, generics.CreateAPIView):
     serializer_class = UserAsignedSerializer
 
     def post(self, request,user_id = None, *args, **kwargs):
