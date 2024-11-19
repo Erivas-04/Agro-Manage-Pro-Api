@@ -12,7 +12,7 @@ class UserListSerializer(serializers.ModelSerializer):
         return {
             'id': instance.id,
             'username': instance.username,
-            'firstname': instance.firstname,
+            'firstname': instance.name,
             'lastname': instance.last_name,
             'observations': instance.observations,
             'tel': instance.tel,
@@ -57,6 +57,12 @@ class CreateUser(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+
+    def create(self, validated_data):
+        user = User(id = None, **validated_data)
+        user.set_password(user.password)
+        user.save()
+        return user
 
 class UpdatePasswordSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=20,

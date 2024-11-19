@@ -17,7 +17,7 @@ class UserAsignedSerializer(serializers.ModelSerializer):
         return {
             'id': instance.user.id,
             'username': instance.user.username,
-            'firstname': instance.user.firstname,
+            'firstname': instance.user.name,
             'lastname': instance.user.last_name,
             'tel': instance.user.tel,
             'role': 'USER' if instance.user.role == 0 else 'ADMIN',

@@ -8,7 +8,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'python-test',
+        'NAME': 'agro-manage-pro',
         'HOST': 'localhost',
         'USER': 'root',
         'PASSWORD': '',

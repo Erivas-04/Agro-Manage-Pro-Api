@@ -8,7 +8,7 @@ class Company(models.Model):
                                     validators=[MinLengthValidator(3)])
     hability = models.BooleanField('Habilitado',
                                    default=True)
-    usernameextension = models.CharField('Extension de empresa',
+    usernameExtension = models.CharField('Extension de empresa',
                                          max_length=10,
                                          validators=[MinLengthValidator(5)])
     address = models.CharField('Direccion',
@@ -54,4 +54,4 @@ class UserAsigned(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'{self.user.firstname} de {self.company.company_name}'
+        return f'{self.user.name} de {self.company.company_name}'
