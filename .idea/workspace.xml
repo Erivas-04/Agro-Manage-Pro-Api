@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="correccion de creacion de usuarios al colocar un password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonTest/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/local.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonTest/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/production.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/company/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/company/api/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +48,7 @@
     "Python.manage.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Documentos/DESSARROLLO DE SOFTWARE/System GS",
+    "last_opened_file_path": "C:/Documentos/DESSARROLLO DE SOFTWARE/ECode/pythonProject1",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
   }
 }]]></component>
