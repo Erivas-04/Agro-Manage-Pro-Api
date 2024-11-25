@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="correccion de creacion de usuarios al colocar un password">
+    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="requerimientos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonTest/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +50,7 @@
     "Python.manage.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Documentos/DESSARROLLO DE SOFTWARE/ECode/pythonProject1",
+    "last_opened_file_path": "C:/Documentos/DESSARROLLO DE SOFTWARE/Agro manage pro/pythonProject",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
   }
 }]]></component>
@@ -133,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732053304835</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="requerimientos">
+      <option name="closed" value="true" />
+      <created>1732570628937</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732570628937</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +163,7 @@
     <MESSAGE value="Funcionamiento de creacion total casi terminado" />
     <MESSAGE value="login y actualizacion de busquedas por id de asignacion" />
     <MESSAGE value="correccion de creacion de usuarios al colocar un password" />
-    <option name="LAST_COMMIT_MESSAGE" value="correccion de creacion de usuarios al colocar un password" />
+    <MESSAGE value="requerimientos" />
+    <option name="LAST_COMMIT_MESSAGE" value="requerimientos" />
   </component>
 </project>
