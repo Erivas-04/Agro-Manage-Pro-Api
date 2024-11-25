@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="Automatizar hostname">
+    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="Automatizar hostname 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonTest/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonTest/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/production.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonTest/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +45,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.manage.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Documentos/DESSARROLLO DE SOFTWARE/Agro manage pro/pythonProject",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Documentos/DESSARROLLO DE SOFTWARE/Agro manage pro/pythonProject&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProject" />
@@ -174,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732574189750</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Automatizar hostname 2">
+      <option name="closed" value="true" />
+      <created>1732574304306</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732574304306</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +208,7 @@
     <MESSAGE value="dominio agregado" />
     <MESSAGE value="correccion en el dominio" />
     <MESSAGE value="Automatizar hostname" />
-    <option name="LAST_COMMIT_MESSAGE" value="Automatizar hostname" />
+    <MESSAGE value="Automatizar hostname 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Automatizar hostname 2" />
   </component>
 </project>
