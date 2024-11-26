@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="cambios de produccion y archivos estaticos">
+    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="subida de estaticos para admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PythonTest/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonTest/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/production.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732578085718</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="subida de estaticos para admin">
+      <option name="closed" value="true" />
+      <created>1732633862813</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732633862813</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +225,7 @@
     <MESSAGE value="Automatizar hostname" />
     <MESSAGE value="Automatizar hostname 2" />
     <MESSAGE value="cambios de produccion y archivos estaticos" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios de produccion y archivos estaticos" />
+    <MESSAGE value="subida de estaticos para admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="subida de estaticos para admin" />
   </component>
 </project>
