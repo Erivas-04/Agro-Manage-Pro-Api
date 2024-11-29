@@ -33,6 +33,9 @@ class ExpiringTokenAuthentication(TokenAuthentication):
         is_expired = self.token_expire_handler(token)
 
         if is_expired:
+            user = token.user
+            token.delete()
+            token = self.get_model().objects.create(user=user)
             message = 'Token expirado'
 
         user = token.user

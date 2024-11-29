@@ -8,10 +8,10 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'agro-manage-pro',
-        'HOST': 'agro-manage-pro-db.c940asue891b.us-east-2.rds.amazonaws.com',
-        'USER': 'adminegarcia',
-        'PASSWORD': 'Admin.2024',
+        'NAME': 'agro-manage-pro-local',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': '',
         'PORT': 3306
     }
 }

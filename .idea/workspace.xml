@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="subida de estaticos para admin">
+    <list default="true" id="8bac68db-ecce-439c-a6f3-bf7fbb7214f4" name="Changes" comment="Configurar para permitir consultas en front">
+      <change afterPath="$PROJECT_DIR$/apps/reports/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/serializers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/serializers/animal_report_serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/serializers/animalfood_report_serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/serializers/list_report_serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/views/animal_report_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/views/animalfood_report_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/api/views/list_report_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/reports/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PythonTest/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonTest/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/settings/local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonTest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonTest/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login_logout/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login_logout/authentication.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/login_logout/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/login_logout/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732633862813</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Configurar para permitir consultas en front">
+      <option name="closed" value="true" />
+      <created>1732649226632</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732649226632</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +253,7 @@
     <MESSAGE value="Automatizar hostname 2" />
     <MESSAGE value="cambios de produccion y archivos estaticos" />
     <MESSAGE value="subida de estaticos para admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="subida de estaticos para admin" />
+    <MESSAGE value="Configurar para permitir consultas en front" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configurar para permitir consultas en front" />
   </component>
 </project>

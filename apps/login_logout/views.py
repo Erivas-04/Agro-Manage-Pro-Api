@@ -21,21 +21,11 @@ class Login(ObtainAuthToken):
 
         token,created = Token.objects.get_or_create(user = user)
 
-        if created:
-            return Response({
-                'token': token.key,
-                'asig': user_asigned.id
-            }, status = status.HTTP_201_CREATED)
-
-        token.delete()
-
-        token = Token.objects.create(user = user)
-
         return Response({
             'token': token.key,
             'asig': user_asigned.id
-        }, status = status.HTTP_200_OK)
-#
+        }, status = status.HTTP_201_CREATED)
+
 # class Logout(APIView):
 #     def post(self,request, *args, **kwargs):
 #         token = request.GET.get('token')

@@ -38,7 +38,8 @@ LOCAL_APPS = [
     'apps.company',
     'apps.cages',
     'apps.animals',
-    'apps.login_logout'
+    'apps.login_logout',
+    'apps.reports'
 ]
 
 THIRD_APPS = [
@@ -50,7 +51,23 @@ THIRD_APPS = [
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
 
+
+# opciones usadas para variables globales
+
 TOKEN_EXPIRED_AFTER_SECONDS = 1 * 60 * 60 * 24
+
+ANIMAL_MOVE_OPTIONS = (
+    (0, 'Entrada'),
+    (1, 'Salida'),
+    (2, 'Muerte')
+)
+
+ANIMAL_FOOD_MOVE_OPTIONS = (
+    (0, 'Uso'),
+    (1, 'Ingreso')
+)
+
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -108,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200",
-    "https://agromanagepro.vercel.app/"
+    "https://agromanagepro.vercel.app",
 ]
 
 
