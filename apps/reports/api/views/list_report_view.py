@@ -1,6 +1,8 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+
+from apps.company.models import UserAsigned
 from apps.reports.models import AsigAnimalMove, AsigAnimalFoodMove
 from ..serializers.list_report_serializer import ReportAnimalMoveSerializer, ReportAnimalFoodMoveSerializer
 from apps.login_logout.authentication_mixins import Authentication
@@ -10,8 +12,10 @@ class ListReport(Authentication, APIView):
         if not id_user:
             return Response(data={'message': 'el id no fue enviado correctamente'}, status=status.HTTP_400_BAD_REQUEST)
 
-        animal_move = AsigAnimalMove.objects.filter(animal_move__user__id = id_user)
-        animalfood_move = AsigAnimalFoodMove.objects.filter(animalfood_move__user__id = id_user)
+        user = UserAsigned.objects.filter(id = id_user).first()
+
+        animal_move = AsigAnimalMove.objects.filter(animal_move__user__company__id = user.company.id)
+        animalfood_move = AsigAnimalFoodMove.objects.filter(animalfood_move__user__company__id = user.company.id)
 
         animal_move_serializer = ReportAnimalMoveSerializer(animal_move, many=True).data
         animalfood_move_serializer = ReportAnimalFoodMoveSerializer(animalfood_move, many=True).data
