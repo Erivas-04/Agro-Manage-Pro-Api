@@ -7,6 +7,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123123
       - MYSQL_DATABASE=agro-manage-pro-local
+    volumes:
+      - agromanagepro-data:/var/lib/mysql
   agromanageproapi:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -15,3 +17,6 @@ services:
     depends_on:
       agromanageprodb:
           condition: service_healthy
+
+volumes:
+  agromanagepro-data:
