@@ -11,7 +11,7 @@ DATABASES = {
         'NAME': 'agro-manage-pro-local',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '123123',
         'PORT': 3306
     }
 }

@@ -30,7 +30,6 @@ BASE_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
 ]
 
 LOCAL_APPS = [
@@ -39,7 +38,9 @@ LOCAL_APPS = [
     'apps.cages',
     'apps.animals',
     'apps.login_logout',
-    'apps.reports'
+    'apps.reports',
+    'apps.input.buys',
+    'apps.input.inputs',
 ]
 
 THIRD_APPS = [
