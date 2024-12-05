@@ -38,9 +38,7 @@ LOCAL_APPS = [
     'apps.cages',
     'apps.animals',
     'apps.login_logout',
-    'apps.reports',
-    'apps.input.buys',
-    'apps.input.inputs',
+    'apps.reports'
 ]
 
 THIRD_APPS = [
