@@ -1,21 +1,17 @@
-FROM python:3.10-slim
+FROM python:3.10
 
 WORKDIR /app
 
-RUN apt update \
-    && pip install --upgrade pip
-
-COPY ./requirements.txt ./
-
-RUN apt update && apt install -y \
+RUN apt-get update && apt-get install -y \
     build-essential \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
+    pkg-config \
+    default-libmysqlclient-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /app/requirements.txt
 
-COPY ./ ./
+RUN pip install -r requirements.txt
 
-COPY ./requirements.txt ./
+COPY . /app
 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

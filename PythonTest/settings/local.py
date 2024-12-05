@@ -9,7 +9,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'agro-manage-pro-local',
-        'HOST': 'localhost',
+        'HOST': 'agromanageprodb',
         'USER': 'root',
         'PASSWORD': '123123',
         'PORT': 3306
